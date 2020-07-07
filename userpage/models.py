@@ -32,6 +32,8 @@ class UserInfo(models.Model):
         help_text = "You live")
     about = models.TextField()
 
+    image = models.ImageField(upload_to='images/', default='')
+
     class Meta:
         ordering = ["name", "-second_name"]
 

@@ -53,9 +53,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SITE_ID = 1
-
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-
 LOGIN_REDIRECT_URL = 'home'
 
 ########################################### its for was write for allauth ^
@@ -139,3 +137,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# its for storing mediafiles in this directory
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
