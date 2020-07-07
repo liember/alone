@@ -17,7 +17,7 @@ Including another URLconf
 from django.urls import path
 from django.contrib import admin
 
-
+app_name = 'userpage'
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin_page'),
 ]
