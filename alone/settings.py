@@ -39,11 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Authoriztion module (allauth)
-    'allauth',
-    'allauth.account',
+    # 'allauth',
+    # 'allauth.account',
     'django.contrib.sites',
 
-    'userpage'
+    'userpage',
+    'regpage',
 ]
 
 
@@ -54,7 +55,6 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-LOGIN_REDIRECT_URL = 'home'
 
 ########################################### its for was write for allauth ^
 
@@ -141,3 +141,6 @@ STATIC_URL = '/static/'
 # its for storing mediafiles in this directory
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+AUTH_USER_MODEL = "regpage.User"
