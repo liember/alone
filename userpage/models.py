@@ -27,7 +27,7 @@ class UserInfo(models.Model):
         choices=YEAR_IN_SCHOOL_CHOICES,
         default=RUSSIA,
     )
-    city = models.CharField( 
+    city = models.CharField(
         max_length = 20,
         help_text = "You live")
     about = models.TextField()
