@@ -11,7 +11,7 @@ class RegisterView(CreateView):
     model = User
     form_class = UserRegistrationForm
     template_name = 'accounts/register.html'
-    success_url = '/'
+    success_url = '/accounts/login'
 
     extra_context = {
         'title': 'Register'
