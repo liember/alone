@@ -20,6 +20,7 @@ class User(AbstractUser):
                               error_messages = {
                                   'unique': "A user with that email already exists.",
                               })
+    gender = models.CharField(max_length=20, default = 'non filled')
     status = models.BooleanField(default=False)
     about = models.TextField(blank=True)
 
