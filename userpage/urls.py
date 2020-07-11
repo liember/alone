@@ -20,7 +20,7 @@ from .views import *
 
 app_name = 'userpage'
 urlpatterns = [
-    path('admin/', admin.site.urls, name='admin_page'),
+#    path('admin/', admin.site.urls, name='admin_page'),
     path('', hello),
     path('<slug:username>', UserView.as_view(), name="user-page"),
 ]
