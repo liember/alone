@@ -1,0 +1,40 @@
+<form method="post" action="">
+{% csrf_token %}
+    <div>
+        <input type="text" id="input" name="first_name" required="required" value="{{ request.user.first_name }}"/>
+        <label  for="input">First Name</label>
+    </div>
+    <div>
+        <input type="text" name="last_name" required="required" value="{{ request.user.last_name }}"/>
+        <label for="input">Last Name</label>
+    </div>
+    <div>
+        <div>
+            <label>
+                <input type="radio" {% if request.user.gender == "male" %} checked="checked" {% endif %} name="gender" value="male">Male
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="radio" {% if request.user.gender == "female" %} checked="checked" {% endif %} name="gender" value="female">Female
+            </label>
+        </div>
+    </div>
+    <div>
+        <input type="text" name="country" required="required" value="{{ profile.country }}"/>
+        <label for="input">Country</label>
+    </div>
+    <div>
+        <input type="text" name="city" required="required" value="{{ profile.city }}"/>
+        <label for="input">City</label>
+    </div>
+    <div>
+        <textarea rows="4" id="textarea" required="required" name="about">{{ request.user.about }}</textarea>
+        <label for="textarea">About Me</label>
+    </div>
+    <div>
+        <button type="button" ><span>Cancel</span></button>
+        <button type="submit" ><span>Update</span></button>
+    </div>
+</form>
+    

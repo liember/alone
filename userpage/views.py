@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.contrib import auth
 
-from django.views.generic import DetailView, UpdateView, View
+from django.views.generic import DetailView, UpdateView
 from regpage.models import User
 from userpage.models import Profile
 
@@ -31,3 +32,32 @@ def hello(request):
         return HttpResponse("Hello " + user.username)
     else:
         return HttpResponse("Who are you?" )
+
+
+class ProfileEditView(UpdateView):
+    model = Profile
+    template_name = "profile/edit-my-profile.html"
+    context_object_name = "profile"
+    object = None
+    fields = "__all__"
+
+    def get_object(self, queryset=None):
+        return self.request.user.profile
+
+    def post(self, request, *args, **kwargs):
+        print(request.POST.get('first_name'))
+        user = request.user
+        user.first_name = request.POST.get('first_name')
+        user.last_name = request.POST.get('last_name')
+        user.about = request.POST.get('about')
+        if request.POST.get('gender') == "male":
+            user.gender = "male"
+        else:
+            user.gender = "female"
+        user.save()
+        profile = user.profile
+        profile.country = request.POST.get('country')
+        profile.city = request.POST.get('city')
+        profile.image = request.FILE.get('image')
+        profile.save()
+        return redirect(reverse_lazy('userpage:edit-profile'))
