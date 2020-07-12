@@ -20,6 +20,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.DO_NOTHING, related_name='profile')
 
     age = models.PositiveSmallIntegerField(
+        default = 0,
         help_text = "Yuor age! yep, not a birth's day")
     country = models.CharField(
         max_length=5,
@@ -34,7 +35,7 @@ class Profile(models.Model):
     image = models.ImageField(upload_to='images/', default='avatars/default.png')
 
     def __str__(self):
-        return self.user.first_name + self.user.second_name
+        return self.country + ' ' + self.city
     pass
 
 @receiver(post_save, sender=User)

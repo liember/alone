@@ -23,5 +23,4 @@ urlpatterns = [
 #    path('admin/', admin.site.urls, name='admin_page'),
     path('', hello),
     path('<slug:username>', UserView.as_view(), name="user-page"),
-    path('edit', ProfileEditView.as_view(), name="edit"),
 ]

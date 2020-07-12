@@ -2,9 +2,9 @@
 <p> username:   {{ user.username }} </p>
 <p> email:   {{ user.email}} </p>
 --------------------------------------
-<p>Имя: {{ user.profile.name}} </p>
-<p>Фмилия: {{ user.profile.second_name}} </p>
+<p>Имя: {{ user.first_name}} </p>
+<p>Фмилия: {{ user.last_name}} </p>
 <p>Возвраст: {{ user.profile.age}} </p>
 <hr>
 <img src="{{ user.profile.image.url }}" alt="" style="height: 280px">
-<p>О себе: {{ user.profile.about}} </p>
+<p>О себе: {{ user.about}} </p>
