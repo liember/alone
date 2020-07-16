@@ -1,0 +1,68 @@
+.reg-content{
+    margin-top: 
+}
+
+.reg-label{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 51px;
+    text-align: center;
+
+    /* Цвет текста */
+    color: #35136C;
+}
+
+.reg-standard-block{
+    width: 370px; 
+    margin-top: 40px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    padding: 10px 6px 10px 12px;
+}
+
+.reg-field{
+    background: #FFFFFF;
+    font-size: 16px;
+    line-height: 20px;
+    box-shadow: 0px 2px 5px rgba(181, 175, 190, 0.33);
+    /* Цвет вторичный */
+    border: 1px solid rgba(181, 175, 190, 0.38);
+    /* identical to box height */
+    color: #B5AFBE;
+}
+
+.reg-form{
+    text-align: center;
+}
+
+.reg-btn{
+    font-size: 27px;
+    line-height: 33px;
+    /* identical to box height */
+    color: #FFFFFF;
+    /* Цвет акцентный */
+    background: #D939AC;
+    box-shadow: 0px 4px 7px rgba(217, 57, 172, 0.42);
+}
+
+.reg-already-have{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 29px;
+    text-align: center;
+    
+    margin-top: 20px;
+    color: #35136C;
+}
+
+.reg-info{
+    margin-top: 5%;
+}
+

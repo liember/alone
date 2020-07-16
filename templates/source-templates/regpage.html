@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Alone</title>
+        <meta name="description" content="Social network for me, because im lonely">
+        <meta name="keywords" content="loneliness, depression, suicide, lack of communication, outcast">
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Pacifico&display=swap"> 
+        <!-- 
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Pacifico', cursive;
+        -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="../static/css/common.css">
+        <link rel="stylesheet" href="../static/css/regpage.css">
+    </head>
+        
+    <body>
+        <header class="container">
+            <div class="row">
+                <div class="col-md-11">
+                    <h1 class="logo">Alone</h1>
+                    <br> <!-- i am lazy its for margin to reg content -->
+                </div>
+                <div class="dropdown col-md-1 language-toggle">
+                  <button class="bg-white dropdown-toggle border-0 languege-toggle-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" >
+                    En
+                  </button>
+                  <ul class="dropdown-menu border-0  " aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item languege-toggle-text" href="#">Ru</a></li>
+                  </ul>
+                </div>
+            </div>     
+        </header>
+        
+        <section class="container">
+            <div class="row reg-content">
+                
+                <!-- User counter -->
+                <div class="col-md-6">
+                    <!-- Counter block -->
+                    <div class="container pt-3">
+                        
+                        <div class="reg-info">
+                        
+                            <!-- Its be count down by js -->
+                            <div class="reg-label">924</div>
+                            <div class="reg-label">
+                                <h3>People already exist in alone</h3>
+                                <h4></h4>
+                            </div>
+                            
+                        </div>
+                        
+                        <img src="../static/image/aloooo.jpg" width="100%">
+                        
+                    </div>
+                </div>
+                
+                
+                <!-- Form registration -->
+                <div class="col-md-6">
+                    <div class="container reg-label">
+                       Registration
+                    </div>
+                    <div class="container reg-form">
+                        <form method="post" action="">
+                            <input class="reg-field reg-standard-block" type="text" required="required" name="username" placeholder="Login"/>
+                            <br>
+                            <input class="reg-field reg-standard-block" type="text" required="required" name="email" placeholder="Email" />
+                            <br>
+                            <input class="reg-field reg-standard-block" type="password" required="required" name="password1" placeholder="Password"/>
+                            <br>
+                            <input class="reg-field reg-standard-block" type="password" required="required" name="password2" placeholder="Repeat pass"/>
+                            <br>
+                            <button class="btn btn-primary reg-btn reg-standard-block" type="submit">Sign Up</button>
+                            <br>
+                            <div class="reg-already-have">
+                                <a href="#" title="">Already have an account</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <hr>
+            <div class="container">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">&copy; 2020 Alone.com</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        
+    </body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+    </script>
+
+</html>

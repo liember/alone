@@ -1,0 +1,47 @@
+body {
+    padding-top: 10px;
+}
+
+footer{
+    padding: 9% 0 0 0;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.logo {
+    font-family: Pacifico;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 84px;
+
+    /* Цвет темы */
+    color: #530FC4;
+}
+
+.language-toggle{
+    margin-top: 2em;
+    line-height: 100%;
+}
+
+.languege-toggle-text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    
+    /* Цвет текста */
+    color: #35136C;
+}
+
+.language-toggle-item {
+    padding: 0;
+    border: none;
+    background: none;
+    width: 10 px;
+}
