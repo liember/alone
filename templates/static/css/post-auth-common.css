@@ -1,0 +1,42 @@
+.menu-button{
+    border: 1px solid #F5F4F6;
+    box-sizing: border-box;
+    background-color: white;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    margin-top: 10px;
+    width: 100%;
+    
+    padding: 3px 5px 3px 5px;
+}
+
+.menu-button a{
+    text-align: left;
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 21px;
+
+    /* identical to box height */
+
+    /* Цвет текста */
+    color: var(--default-font-color);
+}
+
+.sign-out{
+    float: right;
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+
+    /* Цвет текста */
+    color: #35136C;
+}
