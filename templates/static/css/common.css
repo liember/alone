@@ -1,47 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap');
+
+:root {
+    --menu-line-height: 38px;
+    --default-font-color: #35136C;
+}
+
 body {
     padding-top: 10px;
 }
 
-footer{
-    padding: 9% 0 0 0;
+.exit{
     font-family: Montserrat;
     font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
+    font-weight: 600;
+    font-size: 17px;
     line-height: 21px;
-    color: #000000;
+
+    color: var(--default-font-color);
 }
 
 .logo {
     font-family: Pacifico;
-    font-style: normal;
-    font-weight: normal;
     font-size: 48px;
     line-height: 84px;
 
-    /* Цвет темы */
     color: #530FC4;
 }
 
 .language-toggle{
-    margin-top: 2em;
+    height: 100%;
     line-height: 100%;
+    margin-top: 25%;
 }
 
 .languege-toggle-text {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
-    font-size: 17px;
-    line-height: 21px;
+    font-size: 16px;
     
-    /* Цвет текста */
-    color: #35136C;
+    color: var(--default-font-color);
 }
 
 .language-toggle-item {
     padding: 0;
-    border: none;
     background: none;
-    width: 10 px;
+    width: 10px;
 }
+
+footer{
+    padding: 10px 0 10px 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.dropdown-menu{
+    min-width: 5rem;
+}
+
+.nav-link{
+    color: black;
+}
+
+
