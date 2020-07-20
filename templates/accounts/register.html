@@ -1,32 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
+
+
+
+
 {% load static %}
-<head>
-</head>
-<body>
-<!--<div class="se-pre-con"></div>-->
-<form method="post" action="">
-{% csrf_token %}
-<div class="form-group">
-<input type="text" required="required" name="email"/>
-<label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
-</div>
-<div class="form-group">
-<input type="text" required="required" name="username"/>
-<label class="control-label" for="input">User Name</label><i class="mtrl-select"></i>
-</div>
-<div class="form-group">
-<input type="password" required="required" name="password1"/>
-<label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
-</div>
-<div class="form-group">
-<input type="password" required="required" name="password2"/>
-<label class="control-label" for="input">Confirm Password</label><i class="mtrl-select"></i>
-</div>
-<a href="{% url 'regpage:login' %}" title="" class="already-have">Already have an account</a>
-<div class="submit-btns">
-<button class="mtr-btn signup" type="submit"><span>Register</span></button>
-</div>
-</form>
-</body>
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include 'includes/meta.html' %}
+
+        <link rel="stylesheet" href="{% static '/css/common.css' %} ">
+        <link rel="stylesheet" href="{% static '/css/regpage.css' %} ">
+    </head>
+        
+    <body>
+       
+        {% include 'includes/header.html'%}
+        
+        <section class="container">
+            <div class="row reg-content">
+                
+                <!-- User counter -->
+                <div class="col-md-6">
+                    <!-- Counter block -->
+                    <div class="container pt-3">
+                        
+                        <div class="reg-info">
+                        
+                            <!-- Its be count down by js -->
+                            <div class="reg-label">924</div>
+                            <div class="reg-label">
+                                <h3>People already exist in alone</h3>
+                                <h4></h4>
+                            </div>
+                            
+                        </div>
+                        
+                        <img src="{% static  '/image/aloooo.jpg' %}" width="100%">
+                        
+                    </div>
+                </div>
+                
+                
+                <!-- Form registration -->
+                <div class="col-md-6">
+                    <div class="container reg-label">
+                       Registration
+                    </div>
+                    <div class="container reg-form">
+                        <form method="post" action="">
+                             {% csrf_token %}
+                            <input class="reg-field reg-standard-block" type="text" required="required" name="username" placeholder="Username"/>
+                            <br>
+                            <input class="reg-field reg-standard-block" type="text" required="required" name="email" placeholder="Email" />
+                            <br>
+                            <input class="reg-field reg-standard-block" type="password" required="required" name="password1" placeholder="Password"/>
+                            <br>
+                            <input class="reg-field reg-standard-block" type="password" required="required" name="password2" placeholder="Repeat pass"/>
+                            <br>
+                            <button class="btn btn-primary reg-btn reg-standard-block" type="submit">Sign Up</button>
+                            <br>
+                            <div class="reg-already-have">
+                                <a href="{% url 'regpage:login' %}" title="">Already have an account</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        {% include 'includes/footer.html'%}
+        
+    </body>
+    
+    {% include 'includes/scripts.html'%}
 </html>
