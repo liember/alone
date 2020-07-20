@@ -1,10 +1,98 @@
-Персональненько
-<p> username:   {{ user.username }} </p>
-<p> email:   {{ user.email}} </p>
---------------------------------------
-<p>Имя: {{ user.first_name}} </p>
-<p>Фмилия: {{ user.last_name}} </p>
-<p>Возвраст: {{ user.profile.age}} </p>
-<hr>
-<img src="{{ user.profile.image.url }}" alt="" style="height: 280px">
-<p>О себе: {{ user.about}} </p>
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include 'includes/meta.html' %}
+
+        <link rel="stylesheet" href="{% static '/css/common.css' %} ">
+        <link rel="stylesheet" href="{% static '/css/post-auth-common.css' %}">
+        <link rel="stylesheet" href="{% static '/css/userpage.css' %}">
+    </head>
+        
+    <body>
+
+        {% include 'includes/sec_header.html'%}
+
+        <section class="container">
+            <div class="row">
+                
+                <!-- Menu -->
+                <div class="col-md-2">
+                    <button class="menu-button"><a class="menu-button-link" href="">Profile</a></button>
+                    <button class="menu-button"><a class="menu-button-link" href="">Friends</a></button>
+                    <button class="menu-button"><a class="menu-button-link" href="">Messanges</a></button>
+                </div>
+                
+                <div class="col-md-1"></div>
+                
+                <!-- User info -->
+                <div class="col-md-5 user-info">
+                    <ul>
+                        <li>Name: <span> {{ user.first_name}} {{ user.last_name}} </span></li>
+                        <li>Age: <span> {{ user.profile.age}} </span></li>
+                        <li>Gender: <span> {{ user.profile.gender}} </span></li>
+                        <li>Country: <span> {{ user.profile.country }} </span></li>
+                        <li>City: <span>  {{ user.profile.city }} </span></li>
+                        <li>About: <span>  {{ user.about}} </span></li>
+                    </ul>
+                    
+                </div>
+                
+                <div class="col-md-1"></div>
+                
+                <!-- User Avatar -->
+                <div class="col-md-3">
+                    <div class="avatar"></div>  
+                    <button class="edit-btn btn btn-primary reg-btn">Edit</button>
+                </div>
+                
+            </div>
+        </section>
+        
+        <footer>
+            <hr>
+            <div class="container">
+               <div class="row">
+                   
+                   <!-- Footer links -->
+                   <div class="col-md-6">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">&copy; 2020 Alone.com</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Sources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                        </ul>
+                   </div>
+                   
+                   <!-- Lanfuage tooggle -->
+                   <div class="col-md-6">
+                        <ul class="nav justify-content-end align-middle">
+                            <li class="nav-item">
+                                <div class="dropdown col-md-1 language-toggle">
+                                    <button class="bg-white dropdown-toggle border-0 languege-toggle-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" >
+                                        En
+                                    </button>
+                                    <ul class="dropdown-menu border-0  " aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item languege-toggle-text" href="#">Ru</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                   
+                </div>  
+            </div>
+        </footer>
+        
+        {% include 'includes/footer.html'%}
+        
+    </body>
+    
+    {% include 'includes/scripts.html'%}
+
+</html>
