@@ -1,23 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
 {% load static %}
-<head>
-</head>
-<body>
- <form method="post" action="">
-{% csrf_token %}
-<div class="form-group">
-<input type="email" id="input" name="email" required="required"/>
-<label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
-</div>
-<div class="form-group">
-<input type="password" name="password" required="required"/>
-<label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
-</div>
-<button type="submit"><span>Login</span></button>
-<button><a href="{% url 'regpage:register' %}"><span>Register</span> </button>
-</a>
-</div>
-</form>
-</body>
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include 'includes/meta.html' %}
+
+        <link rel="stylesheet" href="{% static '/css/common.css' %} ">
+        <link rel="stylesheet" href="{% static '/css/regpage.css' %} ">
+    </head>
+        
+    <body>
+       
+        {% include 'includes/header.html'%}
+
+        <section class="container">
+            <div class="row reg-content">
+                
+                <!-- User counter -->
+                <div class="col-md-6">
+                    <!-- Counter block -->
+                    <div class="container pt-3">
+                        
+                        <div class="reg-info">
+                        
+                            <!-- Its be count down by js -->
+                            <div class="reg-label">924</div>
+                            <div class="reg-label">
+                                <h3>People already exist in alone</h3>
+                                <h4></h4>
+                            </div>
+                            
+                        </div>
+                        
+                        <img src="{% static  '/image/aloooo.jpg' %}" width="100%">
+                        
+                    </div>
+                </div>
+                
+                
+                <!-- Form registration -->
+                <div class="col-md-6">
+                    <br><br><br>
+                    <div class="container reg-label">
+                       Registration
+                    </div>
+                    <div class="container reg-form">
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            <input class="reg-field reg-standard-block" type="email" id="input" name="email" required="required" placeholder="Email"/>
+                            <br>
+                            <input class="reg-field reg-standard-block" type="password" name="password" required="required" placeholder="Password"/>
+                            <br>
+                            <button class="btn btn-primary reg-btn reg-standard-block" type="submit">Login</button>
+                            <br>
+                            <div class="reg-already-have">
+                                <a href="{% url 'regpage:register' %}" title="">Sign Up</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        {% include 'includes/footer.html'%}
+        
+    </body>
+    
+    {% include 'includes/scripts.html'%}
+
 </html>
