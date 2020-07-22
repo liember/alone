@@ -9,21 +9,26 @@
     font-size: 17px;
     line-height: 21px;
 
+    margin-top: 10px;
+    
     color: var(--default-font-color);
 }
 
 .user-info ul li span {
     font-weight: 700;
+    float:inherit;
+    margin-left: 10px;
 }
 
 .avatar{
     float: right;
     width: 100%;
     height: 380px;
-    
-    background-image: url(../../../media/images/my-little-pony-%D1%84%D1%8D%D0%BD%D0%B4%D0%BE%D0%BC%D1%8B-mlp-art-mlp-OC-5433547.jpeg);
-    background-size: cover;
-    background-position: center;
+}
+
+.avatar img{
+    width: 100%;
+    height: 380px;
 }
 
 .edit-btn{
@@ -43,4 +48,61 @@
     font-style: normal;
     font-weight: bold;
     padding: 10px 6px 10px 12px;
+}
+
+.edit-field{
+    float: right;    
+    background: #FFFFFF;
+
+    border: 1px solid rgba(181, 175, 190, 0.38);
+    box-sizing: border-box;
+    border-radius: 3px;
+    
+   
+}
+
+.radio{
+    margin-top: 31%;
+    line-height: 100%;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 13px;
+}
+
+.edit-name{
+     margin-top: 10px;
+    text-align: left;
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 21px;
+
+    /* identical to box height */
+
+    /* Цвет текста */
+    color: var(--default-font-color);
+}
+
+.upld-btn{
+    border: none;
+    
+    font-size: 12px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background: #D939AC;
+    box-shadow: 0px 4px 7px rgba(217, 57, 172, 0.42); 
+    
+    width: 100%; 
+    margin-top: 20px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    padding: 10px 6px 10px 12px; 
 }

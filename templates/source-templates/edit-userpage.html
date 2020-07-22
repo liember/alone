@@ -1,18 +1,34 @@
-{% load static %}
 <!doctype html>
 <html lang="en">
     <head>
-        {% include 'includes/meta.html' %}
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Alone</title>
+        <meta name="description" content="Social network for me, because im lonely">
+        <meta name="keywords" content="loneliness, depression, suicide, lack of communication, outcast">
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        
 
-        <link rel="stylesheet" href="{% static '/css/common.css' %} ">
-        <link rel="stylesheet" href="{% static '/css/post-auth-common.css' %}">
-        <link rel="stylesheet" href="{% static '/css/userpage.css' %}">
+        <link rel="stylesheet" href="../../static/css/common.css">
+        <link rel="stylesheet" href="../../static/css/post-auth-common.css">
+        <link rel="stylesheet" href="../../static/css/userpage.css">
     </head>
         
     <body>
-
-        {% include 'includes/sec_header.html'%}
-
+        <header class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <h1 class="logo">Alone</h1>
+                    <br> <!-- i am lazy its for margin to reg content -->
+                </div>
+                <div class="col-md-2"><a  class="sign-out" href="#">Sign Out</a></div>
+            </div>     
+        </header>
+        
         <section class="container">
             <div class="row">
                 
@@ -28,12 +44,12 @@
                 <!-- User info -->
                 <div class="col-md-5 user-info">
                     <ul>
-                        <li>Name: <span> {{ user.first_name}} {{ user.last_name}} </span></li>
-                        <li>Age: <span> {{ user.profile.age}} </span></li>
-                        <li>Gender: <span> {{ user.profile.gender}} </span></li>
-                        <li>Country: <span> {{ user.profile.country }} </span></li>
-                        <li>City: <span>  {{ user.profile.city }} </span></li>
-                        <li>About: <span>  {{ user.about}} </span></li>
+                        <li>Name: <span>Johny Dark</span></li>
+                        <li>Age: <span>20</span></li>
+                        <li>Gender: <span>Murdered soul</span></li>
+                        <li>Country: <span>Tartarus</span></li>
+                        <li>City: <span>None</span></li>
+                        <li>About: <span>I am waiting for the stars to utter what they cannot say, in order to resurrect and return darkness to this mortal world.</span></li>
                     </ul>
                     
                 </div>
@@ -42,10 +58,8 @@
                 
                 <!-- User Avatar -->
                 <div class="col-md-3">
-                    <div class="avatar">
-                        <img src=" {{ user.profile.image.url }}">
-                    </div>  
-                    <a href="edit-profile"><button class="edit-btn btn btn-primary reg-btn">Edit</button></a>
+                    <div class="avatar"></div>  
+                    <button class="edit-btn btn btn-primary reg-btn">Edit</button>
                 </div>
                 
             </div>
@@ -91,10 +105,10 @@
             </div>
         </footer>
         
-        {% include 'includes/footer.html'%}
-        
     </body>
     
-    {% include 'includes/scripts.html'%}
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+    </script>
 
 </html>

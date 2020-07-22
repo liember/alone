@@ -16,6 +16,8 @@
 .menu-button a{
     text-align: left;
     
+    text-decoration: none;
+    
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
@@ -31,11 +33,13 @@
 .sign-out{
     float: right;
     
+    text-decoration: none;
+    
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
     font-size: 17px;
-    line-height: 21px;
+    line-height: 84px;
 
     /* Цвет текста */
     color: #35136C;

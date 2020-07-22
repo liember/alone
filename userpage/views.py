@@ -56,8 +56,12 @@ class ProfileEditView(UpdateView):
             user.gender = "female"
         user.save()
         profile = user.profile
+        profile.age = request.POST.get('age')
         profile.country = request.POST.get('country')
         profile.city = request.POST.get('city')
-        profile.image = request.FILE.get('image')
+         # profile.age = request.POST.get('age')
+        print(profile.image)
+        profile.image = request.FILES['image']
+        print(profile.image)
         profile.save()
         return redirect(reverse_lazy('userpage:edit-profile'))

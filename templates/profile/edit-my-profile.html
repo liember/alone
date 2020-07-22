@@ -1,40 +1,140 @@
-<form method="post" action="">
-{% csrf_token %}
-    <div>
-        <input type="text" id="input" name="first_name" required="required" value="{{ request.user.first_name }}"/>
-        <label  for="input">First Name</label>
-    </div>
-    <div>
-        <input type="text" name="last_name" required="required" value="{{ request.user.last_name }}"/>
-        <label for="input">Last Name</label>
-    </div>
-    <div>
-        <div>
-            <label>
-                <input type="radio" {% if request.user.gender == "male" %} checked="checked" {% endif %} name="gender" value="male">Male
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="radio" {% if request.user.gender == "female" %} checked="checked" {% endif %} name="gender" value="female">Female
-            </label>
-        </div>
-    </div>
-    <div>
-        <input type="text" name="country" required="required" value="{{ profile.country }}"/>
-        <label for="input">Country</label>
-    </div>
-    <div>
-        <input type="text" name="city" required="required" value="{{ profile.city }}"/>
-        <label for="input">City</label>
-    </div>
-    <div>
-        <textarea rows="4" id="textarea" required="required" name="about">{{ request.user.about }}</textarea>
-        <label for="textarea">About Me</label>
-    </div>
-    <div>
-        <button type="button" ><span>Cancel</span></button>
-        <button type="submit" ><span>Update</span></button>
-    </div>
-</form>
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include 'includes/meta.html' %}
+
+        <link rel="stylesheet" href="{% static '/css/common.css' %} ">
+        <link rel="stylesheet" href="{% static '/css/post-auth-common.css' %}">
+        <link rel="stylesheet" href="{% static '/css/userpage.css' %}">
+    </head>
+        
+    <body>
+
+        {% include 'includes/sec_header.html'%}
+
+        <section class="container">
+        
+            <form method="post" enctype="multipart/form-data" action="">
+                {% csrf_token %}
+                <div class="row">
+                
+                <!-- Menu -->
+                <div class="col-md-2">
+                    <button class="menu-button"><a class="menu-button-link" href="{{ user.username }}">Profile</a></button>
+                    <button class="menu-button"><a class="menu-button-link" href="">Friends</a></button>
+                    <button class="menu-button"><a class="menu-button-link" href="">Messanges</a></button>
+                </div>
+                
+                <div class="col-md-1"></div>
+                
+                <!-- User info -->
+                <div class="col-md-5 user-info">
+                                       
+                    <div class="container edit-name">
+                        Name: 
+                        <input class="edit-field" type="text" id="input" name="first_name" required="required" value="{{ request.user.first_name }}"/>
+                    </div>
+                        
+                    <div class="container edit-name">
+                        Last name:  
+                        <input class="edit-field" type="text" name="last_name" required="required" value="{{ request.user.last_name }}"/>
+                    </div>
+                    
+                    <div class="container edit-name">
+                        Age:  
+                        <input class="edit-field" type="text" name="age" required="required" value="{{ request.user.profile.age }}"/>
+                    </div>
+
+                    <div class="container row edit-name">
+                        <div class="col-md-5">Gender:</div>   
+                        <div class="col-md-1">
+                            <input id="he1" class="radio" type="radio" {% if request.user.gender == "male" %} checked="checked" {% endif %} name="gender" value="male">
+                        </div>
+                            <div class="col-md-3">Male</div>
+                               
+                            <div class="col-md-1">
+                                <input id="he2" class=" radio" type="radio" {% if request.user.gender == "female" %} checked="checked" {% endif %} name="gender" value="female">
+                            </div>
+                            <div class="col-md-2">Female</div>
+                        </div>
+                        
+                        <div class="container edit-name">
+                            Country:   <input class="edit-field" type="text" name="country" required="required" value="{{ profile.country }}"/>
+                        </div>
+                        
+                        <div class="container edit-name">
+                            City:  <input class="edit-field" type="text" name="city" required="required" value="{{ profile.city }}"/>
+                        </div>
+                        
+                        <div class="container edit-name">
+                            About:   <textarea class="edit-field" rows="4" id="textarea" required="required" name="about">{{ request.user.about }}</textarea> 
+                        </div>
+                               
+                        <button class="edit-btn btn btn-primary reg-btn" type="submit" ><span>Update</span></button>          
+                    
+                    
+                    
+                </div>
+                
+                <div class="col-md-1"></div>
+                
+                <!-- User Avatar -->
+                <div class="col-md-3">
+                    <div class="avatar">
+                        <img src=" {{ user.profile.image.url }}">
+                    </div>  
+                    <input type="file" name="image" class="upld-btn btn btn-primary reg-btn">
+                </div>
+                
+            </div>
+                </form>
+        </section>
+        
+        <footer>
+            <hr>
+            <div class="container">
+               <div class="row">
+                   
+                   <!-- Footer links -->
+                   <div class="col-md-6">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">&copy; 2020 Alone.com</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Sources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                        </ul>
+                   </div>
+                   
+                   <!-- Lanfuage tooggle -->
+                   <div class="col-md-6">
+                        <ul class="nav justify-content-end align-middle">
+                            <li class="nav-item">
+                                <div class="dropdown col-md-1 language-toggle">
+                                    <button class="bg-white dropdown-toggle border-0 languege-toggle-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" >
+                                        En
+                                    </button>
+                                    <ul class="dropdown-menu border-0  " aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item languege-toggle-text" href="#">Ru</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                   
+                </div>  
+            </div>
+        </footer>
+        
+        {% include 'includes/footer.html'%}
+        
+    </body>
     
+    {% include 'includes/scripts.html'%}
+
+</html>
