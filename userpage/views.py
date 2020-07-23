@@ -67,4 +67,4 @@ class ProfileEditView(UpdateView):
         if image:
             profile.image = image
         profile.save()
-        return redirect(reverse_lazy('userpage:edit-profile'))
+        return redirect('userpage:user-page', username = user.username)
