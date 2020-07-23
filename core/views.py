@@ -9,7 +9,7 @@ from regpage.models import User
 from userpage.models import Profile
 
 
-def home():
+def home(request):
     user = request.user
     if user.username:
         return redirect('userpage:user-page', username = user.username)

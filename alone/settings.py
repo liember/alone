@@ -45,8 +45,8 @@ INSTALLED_APPS = [
 
     'userpage',
     'regpage',
-    'friend'
-    'core'
+    'friend',
+    'core',
 ]
 
 
