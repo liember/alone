@@ -28,10 +28,10 @@ class UserView(DetailView):
 
 def hello(request):
     user = request.user
-    if user.username != '':
-        return HttpResponse("Hello " + user.username)
+    if user.username:
+        return redirect('userpage:user-page', username = user.username)
     else:
-        return HttpResponse("Who are you?" )
+        return redirect('accounts:login')
 
 
 class ProfileEditView(UpdateView):

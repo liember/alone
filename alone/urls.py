@@ -20,8 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-#    path('/', include('userpage.urls', namespace='userpage')),
-    path('accounts/', include('regpage.urls')),
+    path('accounts/', include('regpage.urls', namespace='accounts')),
     path('admin/', admin.site.urls),
     path('userpage/', include('userpage.urls',  namespace='userpage')),
     path('people/',include('friend.urls',  namespace='friends')),
