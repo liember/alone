@@ -35,7 +35,7 @@ class Profile(models.Model):
     image = models.ImageField(upload_to='images/', default='avatars/default.png')
 
     def __str__(self):
-        return self.country + ' ' + self.city
+        return self.user.username + ' || ' + self.user.email
     pass
 
 @receiver(post_save, sender=User)
