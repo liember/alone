@@ -10,7 +10,7 @@
     margin-top: 10px;
     width: 100%;
     
-    padding: 3px 5px 3px 5px;
+    padding: 4px 5px 4px 6px;
 }
 
 .menu-button a{
@@ -21,7 +21,7 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 21px;
 
     /* identical to box height */

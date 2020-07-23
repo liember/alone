@@ -19,12 +19,8 @@
                 {% csrf_token %}
                 <div class="row">
                 
-                <!-- Menu -->
-                <div class="col-md-2">
-                    <button class="menu-button"><a class="menu-button-link" href="{{ user.username }}">Profile</a></button>
-                    <button class="menu-button"><a class="menu-button-link" href="">Friends</a></button>
-                    <button class="menu-button"><a class="menu-button-link" href="">Messanges</a></button>
-                </div>
+                
+                {% include 'includes/menu.html' %}
                 
                 <div class="col-md-1"></div>
                 

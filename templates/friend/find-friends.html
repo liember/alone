@@ -1,0 +1,72 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include 'includes/meta.html' %}
+
+        <link rel="stylesheet" href="{% static '/css/common.css' %} ">
+        <link rel="stylesheet" href="{% static '/css/post-auth-common.css' %}">
+        <link rel="stylesheet" href="{% static '/css/userslist.css' %}">
+    </head>
+        
+    <body>
+
+        {% include 'includes/sec_header.html'%}
+
+        <section class="container">
+            <div class="row">            
+                
+                {% include 'includes/menu.html'%}
+
+                <div class="col-md-6">
+                    
+                    <div class="container">
+                        <span class="miracle">Frienship is a miracle</span>
+                    </div>
+                    
+                    <br>
+                    
+                    <ul>
+                    {% for article in users %}
+                        <li class="person-container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="person-image" src="{{ article.profile.image.url }}">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="row  ">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-9">
+                                      <a class="person-name" href="{% url 'userpage:user-page' article.username %}">{{ article.first_name }} {{ article.last_name }}</a>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-9">
+                                     <button class="add-btn btn btn-primary">asdasfasd</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                            
+                          
+                        </li>
+                    {% empty %}
+                        <li>No articles yet.</li>
+                    {% endfor %}
+                    </ul>
+
+                </div>
+            </div>
+
+        </section>
+        
+        {% include 'includes/footer.html'%}
+        
+    </body>
+    
+    {% include 'includes/scripts.html'%}
+
+</html>

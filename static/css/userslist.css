@@ -1,0 +1,58 @@
+.person-container {
+    list-style-type: none;
+    margin-top: 20px;
+    margin-left: -10px;
+}
+
+.person-image{
+    width: 130px;
+    height: 130px;
+}
+
+.person-name{
+    text-align: left;
+    text-decoration: none; 
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 21px;
+
+    color: #35136C;
+}
+
+.add-btn{
+    border: none;
+    
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    background: #D939AC;
+    box-shadow: 0px 4px 7px rgba(217, 57, 172, 0.42); 
+    
+    
+    width: 162.7px;
+    height: 36px;
+
+    margin-top: 15px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    padding: 10px 6px 10px 12px;
+}
+
+.miracle{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6em;
+    line-height: 0.8em;
+
+    /* identical to box height */
+
+    /* Цвет текста */
+    color: #35136C;
+}
